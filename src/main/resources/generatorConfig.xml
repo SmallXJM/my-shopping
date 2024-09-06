@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+  <!-- 本地数据库驱动程序jar包的全路径 -->
+  <classPathEntry location="D:\demoWS\my-shopping\src\main\resources\mysql-connector-java-8.0.13.jar"/>
+
+  <context id="context" targetRuntime="MyBatis3">
+    <commentGenerator>
+      <property name="suppressAllComments" value="false"/>
+      <property name="suppressDate" value="true"/>
+    </commentGenerator>
+
+    <!-- 数据库的相关配置 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/neu_mall?serverTimezone=Asia/Shanghai&amp;nullCatalogMeansCurrent=true" userId="root" password="123456"/>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!-- 实体类生成的位置 -->
+    <javaModelGenerator targetPackage="com.example.myshopping.entity" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <!-- *Mapper.xml 文件的位置 -->
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+      <property name="enableSubPackages" value="false"/>
+    </sqlMapGenerator>
+
+    <!-- Mapper 接口文件的位置 -->
+    <javaClientGenerator targetPackage="com.example.myshopping.dao" targetProject="src/main/java" type="XMLMAPPER">
+      <property name="enableSubPackages" value="false"/>
+    </javaClientGenerator>
+
+    <!--相关表的配置 -->
+    <table tableName="admin_user" domainObjectName="AdminUser" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="admin_user_token" domainObjectName="AdminUserToken" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="carousel" domainObjectName="Carousel" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="goods_category" domainObjectName="GoodsCategory" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="goods_info" domainObjectName="GoodsInfo" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="index_config" domainObjectName="IndexConfig" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="shopping_cart_item" domainObjectName="ShoppingCartItem" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_order_address" domainObjectName="OrderAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_order_item" domainObjectName="OrderItem" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_user" domainObjectName="MallUser" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_user_address" domainObjectName="MallUserAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    <table tableName="t_user_token" domainObjectName="MallUserToken" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+  </context>
+</generatorConfiguration>
